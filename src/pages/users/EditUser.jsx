@@ -194,6 +194,7 @@ export default function EditUser({ title }) {
                   defaultValue={role}
                   onChange={(e) => setRole(e.target.value)}
                 >
+                  <option value="">Select...</option>
                   <option value="user">User</option>
                   <option value="admin">Admin</option>
                 </select>
