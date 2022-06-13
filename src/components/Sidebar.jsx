@@ -32,7 +32,7 @@ export default function Sidebar() {
   };
 
   const { dispatch } = useContext(DarkModeContext);
-  const email = localStorage.getItem('email')
+  const id = localStorage.getItem('userID')
 
   const handleClick = () => {
     setOpen(true);
@@ -114,7 +114,7 @@ export default function Sidebar() {
           </li>
           <p className="sideTitle">USER</p>
           <li>
-            <a href={`/users/${email}`}>
+            <a href={`/users/${id}`}>
               <AccountBoxIcon className="icon" />
               <span>Profile</span>
             </a>
