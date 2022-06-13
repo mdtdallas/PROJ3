@@ -10,15 +10,14 @@ import {
   Snackbar,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import ShowSingle from "./ShowSingle";
 
 const columns = [
   { field: "id", headerName: "ID", width: 50 },
-  { field: "title", headerName: "Title", width: 250 },
+  { field: "title", headerName: "Title", width: 180 },
   {
     field: "location",
     headerName: "Location",
-    width: 250,
+    width: 180,
   },
   {
     field: "judges",
@@ -28,7 +27,7 @@ const columns = [
   {
     field: "image",
     headerName: "Image",
-    width: 110,
+    width: 90,
     renderCell: (params) => {
       return (
         <div className="cellWithImg">
@@ -41,11 +40,11 @@ const columns = [
       );
     },
   },
-  { field: "date", headerName: "Date", width: 130 },
-  { field: "council", headerName: "Cat Council", width: 200 },
+  { field: "date", headerName: "Date", width: 110 },
+  { field: "council", headerName: "Cat Council", width: 190 },
   { field: "ticket_price", headerName: "Price", width: 70 },
   { field: "ticket_count", headerName: "Tickets", width: 70 },
-  { field: "email", headerName: "Created By", width: 180 },
+  { field: "email", headerName: "Created By", width: 150 },
 ];
 
 export default function ShowsDataTable() {

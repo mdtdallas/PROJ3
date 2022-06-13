@@ -10,6 +10,7 @@ import Avatar from '@mui/material/Avatar';
 import { DarkModeContext } from './darkModeContext';
 
 export default function Navbar() {
+    const username = localStorage.getItem('username')
     const { dispatch } = useContext(DarkModeContext);
   return (
     <div className='navbar'>
@@ -38,9 +39,9 @@ export default function Navbar() {
                     <ChatBubbleOutlineIcon className='icon'/>
                     <div className="counter">2</div>
                 </div> */}
-                {/* <div className="item">
-                    <ViewListIcon className='icon'/>
-                </div> */}
+                <div className="item">
+                   <h2> {username}</h2>
+                </div>
                 <div className='item'>
                     <Avatar src="https://api.lorem.space/image/face?w=150" alt="" className=''sx={{ width: 56, height: 56 }} />
                 </div>

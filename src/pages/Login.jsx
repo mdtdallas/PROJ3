@@ -46,6 +46,7 @@ export default function Login3() {
         localStorage.setItem("userType", data.userType);
         localStorage.setItem("email", data.email);
         localStorage.setItem('userID', data.userID);
+        localStorage.setItem('username', data.username);
         if (data.status) setWarning('');
         if (data.status) setSeverity('success')
         handleClick();
