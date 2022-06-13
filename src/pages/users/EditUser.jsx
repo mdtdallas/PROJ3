@@ -31,7 +31,6 @@ export default function EditUser({ title }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data[0]);
         setName(data[0].name);
         setPassword(data[0].password);
         setPhone(data[0].phone);
@@ -91,7 +90,6 @@ export default function EditUser({ title }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
         if (data.status) setSuccess(data.status);
         if (data.error) setError(data.error);
         if (data.warning) setWarning(data.warning);

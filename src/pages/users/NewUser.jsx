@@ -68,7 +68,6 @@ export default function NewUser({ title }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
         if (data.status) setStatus(data.status);
         if (data.warning) setWarning(data.warning);
         if (data.warning) setSeverity('warning');
@@ -89,7 +88,7 @@ export default function NewUser({ title }) {
           <div className="left">
             <img
               src={
-                file ? URL.createObjectURL(file) : 'https://api.lorem.space/image/movie?w=150&h=220'
+                file ? URL.createObjectURL(file) : 'https://api.lorem.space/image/face?w=150&h=150'
               }
               alt=""
             />

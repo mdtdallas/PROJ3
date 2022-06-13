@@ -20,7 +20,7 @@ export default function EditShow({ title }) {
   const [success, setSuccess] = useState("");
   const [warning, setWarning] = useState("");
   const [error, setError] = useState("");
-  const [severity, setSeverity] = useState("success");
+  const [severity, setSeverity] = useState("");
   const [show, setShow] = useState({});
   const { id } = useParams();
 
@@ -34,7 +34,6 @@ export default function EditShow({ title }) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data[0]);
         setShowTitle(data[0].title);
         setLocation(data[0].location);
         setImage(data[0].image);
@@ -43,7 +42,6 @@ export default function EditShow({ title }) {
         setCouncil(data[0].council);
         setTicket_price(data[0].ticket_price);
         setTicket_count(data[0].ticket_count);
-        console.log(data[0].title)
       });
   }, []);
 
@@ -55,7 +53,7 @@ export default function EditShow({ title }) {
     if (reason === "clickaway") {
       return;
     }
-    window.location.href = '/shows';
+    if(success) window.location.href = '/shows';
     setOpen(false);
   };
 
@@ -101,14 +99,13 @@ export default function EditShow({ title }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        if (data.status) setSuccess(data.status);
         if (data.error) setError(data.error);
         if (data.warning) setWarning(data.warning);
         if (data.warning) setSeverity("warning");
         if (data.error) setSeverity("error");
+        if (data.status) setSuccess(data.status);
+        if (data.status) setSeverity('success');
         handleClick();
-        
       });
   };
 

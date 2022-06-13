@@ -59,7 +59,6 @@ export default function DBdataTable(params) {
   }, []);
 
   const addAllow = (id, ip, email) => {
-    console.log(id, ip, email)
     const AllowIP = { id: id, ip: ip, email: email, access: "allow" };
     fetch("https://proj2-api.herokuapp.com/allowIP", {
       method: "POST",

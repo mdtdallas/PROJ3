@@ -71,7 +71,6 @@ export default function CatDataTable() {
       .then((res) => res.json())
       .then((info) => {
         setRows(info);
-        console.log(rows);
       })
       .catch((err) => {
         setError(err);

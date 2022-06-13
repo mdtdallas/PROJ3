@@ -26,7 +26,6 @@ export default function EditCat({ title }) {
     fetch(`https://proj2-api.herokuapp.com/api/cat/${id}`)
     .then(res => res.json())
     .then((data) => {
-      console.log(data[0]);
       setName(data[0].name);
       setBreed(data[0].breed);
       setAge(data[0].age);

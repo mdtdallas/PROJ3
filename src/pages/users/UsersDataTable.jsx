@@ -87,7 +87,6 @@ export default function UsersDataTable() {
       .then((data) => {
         setRows(data.results);
         setStatus(data.status);
-        console.log(data, rows);
         handleClick();
       })
       .catch((err) => {

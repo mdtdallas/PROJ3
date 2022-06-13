@@ -18,7 +18,6 @@ export default function ShowSingle() {
     })
       .then((res) => res.json())
       .then((show) => setShow(show));
-    console.log(show);
   }, []);
 
   return (
