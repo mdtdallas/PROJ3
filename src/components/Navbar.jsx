@@ -1,11 +1,5 @@
 import React, { useContext } from 'react'
-import SearchIcon from '@mui/icons-material/Search';
-import LanguageIcon from '@mui/icons-material/Language';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import ViewListIcon from '@mui/icons-material/ViewList';
 import Avatar from '@mui/material/Avatar';
 import { DarkModeContext } from './darkModeContext';
 
@@ -43,7 +37,7 @@ export default function Navbar() {
                    <h2> {username}</h2>
                 </div>
                 <div className='item'>
-                    <Avatar src="https://api.lorem.space/image/face?w=150" alt="" className=''sx={{ width: 56, height: 56 }} />
+                    <Avatar src="https://api.lorem.space/image/face?w=100" alt="" className='navProfilePic' sx={{ width: 56, height: 56 }} />
                 </div>
             </div>
         </div>

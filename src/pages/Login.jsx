@@ -35,7 +35,6 @@ export default function Login3() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
         if (data.status) setStatus(data.status);
         if (data.warning) setWarning(data.warning);
         if (data.warning) setSeverity('warning');

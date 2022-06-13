@@ -197,18 +197,18 @@ a {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .navbar .items {
   display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .navbar .item {
   display: flex;
-  align-items: flex-end;
-  margin-right: 20px;
-  position: relative;
+  align-items: center;
+  margin: 20px;
 }
 
 .navbar .search {
