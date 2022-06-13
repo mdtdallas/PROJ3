@@ -100,7 +100,7 @@ export default function CatDataTable() {
     if (data.error) setError(data.error);
     if (data.error) setSeverity("error");
     handleClick();
-    if (data.status) window.location.href = "/cats";
+    if (data.status) window.location.reload();
   }
 
   const actionColumn = [

@@ -72,6 +72,8 @@ export default function UsersDataTable() {
     if (data.warning) setWarning(data.warning);
     if (data.error) setError(data.error);
     if (data.error) setSeverity("error");
+    handleClick();
+    if (data.status) window.location.reload();
   }
 
   useEffect(() => {
