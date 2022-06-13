@@ -23,7 +23,13 @@ export default function EditCat({ title }) {
   const {id} = useParams();
 
   useEffect(() => {
-    fetch(`https://proj2-api.herokuapp.com/api/cat/${id}`)
+    fetch(`https://proj2-api.herokuapp.com/api/cat/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        accessToken: localStorage.getItem("accessToken"),
+      },
+    })
     .then(res => res.json())
     .then((data) => {
       setName(data[0].name);
