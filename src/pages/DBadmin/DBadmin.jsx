@@ -24,7 +24,7 @@ export default function DBadmin() {
     .then(res => res.json())
     .then((data) => {
       if(data.status) setStatus(data.status);
-      if(data.status) setSeverity('success');
+      if(data.status) setSeverity(data.status);
       if(data.error) setError(data.error);
       if(data.error) setSeverity('error');
       handleClick();
@@ -70,7 +70,7 @@ export default function DBadmin() {
           <h1>Table Management</h1>
             <div className="buttonStack">
             <Button variant="contained" color="success" onClick={clearLog}>Clear Log Files</Button>
-            <Button variant="contained" onClick={refresh}>Refresh Page</Button>
+            <Button variant="contained" onClick={window.location.reload()}>Refresh Page</Button>
             <Button type="submit" variant="contained" color="error">
               Clear Cats Table
             </Button>

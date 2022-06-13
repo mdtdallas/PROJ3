@@ -68,8 +68,7 @@ export default function EditCat({ title }) {
     </React.Fragment>
   );
 
-  const submit = (e) => {
-    e.preventDefault();
+  const submit = () => {
     const email = localStorage.getItem('email');
     const data = { name: name, breed: breed, age: age, image: image, breeder: breeder, email: email, id: id };
     console.log(data);
