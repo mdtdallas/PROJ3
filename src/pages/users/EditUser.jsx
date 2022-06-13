@@ -192,7 +192,7 @@ export default function EditUser({ title }) {
                   name="userType"
                   id="userTyle"
                   required
-                  defaultValue={role}
+                  value={role}
                   onChange={(e) => setRole(e.target.value)}
                 >
                   <option value="">Select...</option>
