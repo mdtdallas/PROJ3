@@ -156,7 +156,7 @@ export default function DBdataTable(params) {
   ];
 
   return (
-    <div style={{ height: 600, width: "100%" }} className="datatable">
+    <div style={{ height: 450, width: "100%" }} className="datatable">
       <div className="spinner">
         {loading && (
           <div>

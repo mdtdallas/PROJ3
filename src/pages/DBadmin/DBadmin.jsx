@@ -9,7 +9,7 @@ import CloseIcon from "@mui/icons-material/Close";
 export default function DBadmin() {
   const [status, setStatus] = useState('');
   const [error, setError] = useState('');
-  const [severity, setSeverity] = useState('success');
+  const [severity, setSeverity] = useState('');
   const [open, setOpen] = useState(false);
 
   const clearLog = () => {
@@ -23,16 +23,13 @@ export default function DBadmin() {
     })
     .then(res => res.json())
     .then((data) => {
-      if(!data.error) setStatus(data.status);
+      if(data.status) setStatus(data.status);
+      if(data.status) setSeverity('success');
       if(data.error) setError(data.error);
       if(data.error) setSeverity('error');
       handleClick();
+      window.location.reload();
     })
-  }
-
-  const refresh = () => {
-    window.location.reload();
-    return;
   }
  
   const handleClick = () => {

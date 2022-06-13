@@ -38,7 +38,7 @@ export default function EditCat({ title }) {
       setImage(data[0].image);
       setBreeder(data[0].breeder);
     })
-  })
+  }, [])
  
   const handleClick = () => {
     setOpen(true);
@@ -72,6 +72,7 @@ export default function EditCat({ title }) {
     e.preventDefault();
     const email = localStorage.getItem('email');
     const data = { name: name, breed: breed, age: age, image: image, breeder: breeder, email: email, id: id };
+    console.log(data);
     fetch("https://proj2-api.herokuapp.com/api/catUpdate/update", {
       method: "PATCH",
       headers: {
@@ -89,7 +90,7 @@ export default function EditCat({ title }) {
         if(data.warning) setSeverity('warning');
         if(data.error) setSeverity('error');
         handleClick();
-        if(data.status) window.location.href = '/cats';
+        //if(data.status) window.location.href = '/cats';
       })
   };
   return (

@@ -70,7 +70,7 @@ export default function NewShow({ title }) {
         if(data.warning) setSeverity('warning');
         if(data.error) setSeverity('error');
         handleClick();
-        //window.location.reload();
+        if(data.status) window.location.href = '/shows'
       })
   };
   return (
