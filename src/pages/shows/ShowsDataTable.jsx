@@ -29,12 +29,12 @@ const columns = [
     field: "image",
     headerName: "Image",
     width: 110,
-    renderCell: () => {
+    renderCell: (params) => {
       return (
         <div className="cellWithImg">
           <Avatar
             className="cellImg"
-            src="https://picsum.photos/50"
+            src={params.row.image}
             alt="avatar"
           />
         </div>
@@ -52,6 +52,7 @@ export default function ShowsDataTable() {
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState("");
+  const [image, setImage] = useState();
   const [error, setError] = useState("");
   const [warning, setWarning] = useState();
   const [severity, setSeverity] = useState("success");
