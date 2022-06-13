@@ -164,7 +164,7 @@ export default function ShowsDataTable() {
   );
 
   return (
-    <div style={{ height: 400, width: "100%" }} className="datatable">
+    <div style={{ height: '80vh', width: "80vw" }} className="datatable">
       <div className="datatableTitle">
         Add New Show
         <a href="/shows/new">Add Show</a>

@@ -14,35 +14,35 @@ export default function Navbar() {
   return (
     <div className='navbar'>
         <div className='wrapper'>
-            <div className="search">
+            {/* <div className="search">
                 <input type="text" placeholder='Search...' />
                 <SearchIcon />
-            </div>
+            </div> */}
             <div className='items'>
-                <div className="item">
+                {/* <div className="item">
                     <LanguageIcon className='icon'/>
                     <span className='navSpan'>English</span>
-                </div>
+                </div> */}
                 <div className="item">
+                <span className='navSpan'>Dark Mode</span>
                     <DarkModeIcon className='icon' onClick={()=> dispatch({type: "TOGGLE"})}/>
-                    <span className='navSpan'>Dark Mode</span>
                 </div>
-                <div className="item">
+                {/* <div className="item">
                     <FullscreenExitIcon className='icon' />
-                </div>
-                <div className="item">
+                </div> */}
+                {/* <div className="item">
                     <NotificationsNoneIcon className='icon'/>
                     <div className="counter">1</div>
                 </div>
                 <div className="item">
                     <ChatBubbleOutlineIcon className='icon'/>
                     <div className="counter">2</div>
-                </div>
-                <div className="item">
+                </div> */}
+                {/* <div className="item">
                     <ViewListIcon className='icon'/>
-                </div>
+                </div> */}
                 <div className='item'>
-                    <Avatar src="https://picsum.photos/200" alt="" className=''sx={{ width: 56, height: 56 }} />
+                    <Avatar src="https://api.lorem.space/image/face?w=150" alt="" className=''sx={{ width: 56, height: 56 }} />
                 </div>
             </div>
         </div>
