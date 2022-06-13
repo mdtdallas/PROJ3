@@ -71,7 +71,7 @@ export default function EditCat({ title }) {
   const submit = (e) => {
     e.preventDefault();
     const email = localStorage.getItem('email');
-    const data = { name: name, breed: breed, age: age, image: image, breeder: breeder, email: email  };
+    const data = { name: name, breed: breed, age: age, image: image, breeder: breeder, email: email, id: id };
     fetch("https://proj2-api.herokuapp.com/api/catUpdate/update", {
       method: "PATCH",
       headers: {
