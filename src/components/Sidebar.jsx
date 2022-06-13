@@ -106,22 +106,10 @@ export default function Sidebar() {
             </a>
           </li>
           <p className="sideTitle">SETTINGS</p>
-          <a href="/alerts">
-            <li>
-              <NotificationsActiveIcon className="icon" />
-              <span>Notifications</span>
-            </li>
-          </a>
           <li>
             <a href="/dbadmin">
               <StorageIcon className="icon" />
               <span>Database Mangement</span>
-            </a>
-          </li>
-          <li>
-            <a href="/settings">
-              <SettingsIcon className="icon" />
-              <span>Settings</span>
             </a>
           </li>
           <p className="sideTitle">USER</p>
