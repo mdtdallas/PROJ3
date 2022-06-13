@@ -38,6 +38,7 @@ const columns = [
             className="cellImg"
             src={params.row.image}
             alt="avatar"
+            width='100%'
           />
         </div>
       );
