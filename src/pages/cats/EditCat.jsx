@@ -73,7 +73,7 @@ export default function EditCat({ title }) {
     const email = localStorage.getItem('email');
     const data = { name: name, breed: breed, age: age, image: image, breeder: breeder, email: email  };
     fetch("https://proj2-api.herokuapp.com/api/catUpdate/update", {
-      method: "POST",
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
