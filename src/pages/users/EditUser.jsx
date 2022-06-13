@@ -90,11 +90,11 @@ export default function EditUser({ title }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.status) setSuccess(data.status);
         if (data.error) setError(data.error);
         if (data.warning) setWarning(data.warning);
         if (data.warning) setSeverity("warning");
         if (data.error) setSeverity("error");
+        if (data.status) setSuccess(data.status);
         handleClick();
         if (data.status) {
           window.location.href = '/users'
