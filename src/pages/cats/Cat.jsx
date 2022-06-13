@@ -31,7 +31,7 @@ export default function Cat() {
             cat.map(({ id, name, breed, age, image, breeder, email }) => (
               <>
                 <div className="left" key={id}>
-                  <img src={image} alt="Cat Photo" />
+                  <img src={image} alt="of cat" />
                   <h1>Details</h1>
                   <h3>{name}</h3>
                   <h3>{breed}</h3>

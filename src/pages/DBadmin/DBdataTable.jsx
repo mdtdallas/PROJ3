@@ -33,9 +33,9 @@ export default function DBdataTable(params) {
   const [severity, setSeverity] = useState("success");
   const [open, setOpen] = useState(false);
 
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
+  // const handleDelete = (id) => {
+  //   setData(data.filter((item) => item.id !== id));
+  // };
 
   useEffect(() => {
     setLoading(true);

@@ -12,7 +12,6 @@ export default function NewCat({ title }) {
   const [age, setAge] = useState('');
   const [image, setImage] = useState('');
   const [breeder, setBreeder] = useState('');
-  const [email, setEmail] = useState('');
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState('');
   const [warning, setWarning] = useState('');

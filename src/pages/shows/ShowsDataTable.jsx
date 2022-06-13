@@ -51,7 +51,6 @@ export default function ShowsDataTable() {
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(true);
   const [status, setStatus] = useState("");
-  const [image, setImage] = useState();
   const [error, setError] = useState("");
   const [warning, setWarning] = useState();
   const [severity, setSeverity] = useState("success");

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
 import AddPhotoAlternateIcon from "@mui/icons-material/DriveFolderUploadOutlined";
-import { Alert, IconButton, Snackbar, Button, Grid } from "@mui/material";
+import { Alert, IconButton, Snackbar, Button } from "@mui/material";
 import { GridCloseIcon } from "@mui/x-data-grid";
 import { useParams } from "react-router-dom";
 
@@ -98,6 +98,7 @@ export default function EditUser({ title }) {
         handleClick();
         if (data.status) {
           window.location.href = '/users'
+          action();
         }
       });
   };

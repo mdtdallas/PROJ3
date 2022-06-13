@@ -42,7 +42,7 @@ export default function PhotoBoard() {
         cats.map(({ id, image }) => (
           <Card className="detailContainer" key={id}>
             <div className="comments">
-              <img src={image} />
+              <img src={image} alt='of cat'/>
               <Button variant='contained' color='error' onClick={() => {handleDelete(id)}}>Delete</Button>
             </div>
           </Card>

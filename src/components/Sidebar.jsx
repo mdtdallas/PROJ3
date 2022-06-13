@@ -4,10 +4,8 @@ import GroupIcon from "@mui/icons-material/Group";
 import FestivalIcon from "@mui/icons-material/Festival";
 import PetsIcon from "@mui/icons-material/Pets";
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
-import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import StorageIcon from "@mui/icons-material/Storage";
 import LogoutIcon from "@mui/icons-material/Logout";
-import SettingsIcon from "@mui/icons-material/Settings";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import { DarkModeContext } from "./darkModeContext";
 import { Alert, AlertTitle, IconButton, Button, Snackbar } from "@mui/material";
@@ -120,10 +118,10 @@ export default function Sidebar() {
             </a>
           </li>
           <li>
-            <a onClick={logout}>
+            <div onClick={logout}>
               <LogoutIcon className="icon" />
               <span>Logout</span>
-            </a>
+            </div>
           </li>
         </ul>
       </div>

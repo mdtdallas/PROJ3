@@ -42,7 +42,7 @@ export default function ShowSingle() {
 
                 <div className="top">
                   <div className="left">
-                    <img src={image} />
+                    <img src={image} alt='of cat show event'/>
                     <Link to={`/shows/edit/${id}`} element={<EditShow />}>
                       <div className="editButton">Edit</div>
                     </Link>

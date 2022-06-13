@@ -21,7 +21,6 @@ export default function EditShow({ title }) {
   const [warning, setWarning] = useState("");
   const [error, setError] = useState("");
   const [severity, setSeverity] = useState("");
-  const [show, setShow] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
