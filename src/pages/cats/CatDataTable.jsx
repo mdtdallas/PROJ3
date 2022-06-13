@@ -3,7 +3,13 @@ import { DataGrid, GridCloseIcon } from "@mui/x-data-grid";
 import Avatar from "@mui/material/Avatar";
 import { Link } from "react-router-dom";
 import Cat from "./Cat";
-import { Alert, Button, CircularProgress, IconButton, Snackbar } from "@mui/material";
+import {
+  Alert,
+  Button,
+  CircularProgress,
+  IconButton,
+  Snackbar,
+} from "@mui/material";
 
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
@@ -46,7 +52,7 @@ const columns = [
 
 export default function CatDataTable() {
   const [rows, setRows] = useState([]);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [status, setStatus] = useState("");
   const [warning, setWarning] = useState();
   const [severity, setSeverity] = useState("success");
@@ -54,7 +60,7 @@ export default function CatDataTable() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     fetch("https://proj2-api.herokuapp.com/api/cats", {
       headers: {
         "Content-Type": "application/json",
@@ -65,25 +71,29 @@ export default function CatDataTable() {
       .then((res) => res.json())
       .then((info) => {
         setRows(info);
-        console.log(rows)
+        console.log(rows);
       })
       .catch((err) => {
         setError(err);
-        setRows(null)
+        setRows(null);
       })
-      .finally(() => {setLoading(false)})
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
-  
   async function handleDelete(id) {
-    const res = await fetch(`https://proj2-api.herokuapp.com/api/catDelete/delete/${id}`, {
-      method: "delete",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        accessToken: localStorage.getItem("accessToken"),
-      },
-    });
+    const res = await fetch(
+      `https://proj2-api.herokuapp.com/api/catDelete/delete/${id}`,
+      {
+        method: "delete",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          accessToken: localStorage.getItem("accessToken"),
+        },
+      }
+    );
     const data = await res.json();
     if (data.status) setStatus(data.status);
     if (data.warning) setSeverity("warning");
@@ -91,7 +101,7 @@ export default function CatDataTable() {
     if (data.error) setError(data.error);
     if (data.error) setSeverity("error");
     handleClick();
-    if (data.status) window.location.href = '/cats';
+    if (data.status) window.location.href = "/cats";
   }
 
   const actionColumn = [
@@ -102,11 +112,19 @@ export default function CatDataTable() {
       renderCell: (params) => {
         return (
           <div className="cellAction">
+            <>
+              <Link to={`/cats/edit/${params.row.id}`}>
+                <div className="newButton">Edit</div>
+              </Link>
+            </>
             <Link to={`/cats/${params.row.id}`} element={<Cat />}>
-                  <div className="viewButton">View</div>
-                </Link>
+              <div className="viewButton">View</div>
+            </Link>
             <a href="#">
-              <div className="deleteButton" onClick={() => handleDelete(params.row.id)}>
+              <div
+                className="deleteButton"
+                onClick={() => handleDelete(params.row.id)}
+              >
                 Delete
               </div>
             </a>
@@ -145,16 +163,24 @@ export default function CatDataTable() {
   );
 
   return (
-    <div style={{ height: '80%', width: "100%" }} className="datatable">
+    <div style={{ height: "80%", width: "100%" }} className="datatable">
       <div className="datatableTitle">
         Add New Cat
         <a href="/cats/new">Add Cat</a>
       </div>
       <div className="spinner">
-      {loading && <div><CircularProgress color="success" className="iconSpinner" size={400}/></div>}
-      {error && (
-        <div>{`There is a problem fetching the post data - ${error}`}</div>
-      )}
+        {loading && (
+          <div>
+            <CircularProgress
+              color="success"
+              className="iconSpinner"
+              size={400}
+            />
+          </div>
+        )}
+        {error && (
+          <div>{`There is a problem fetching the post data - ${error}`}</div>
+        )}
       </div>
       <DataGrid
         rows={rows}

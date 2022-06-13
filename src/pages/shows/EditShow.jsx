@@ -85,8 +85,8 @@ export default function EditShow({ title }) {
       judges: judges,
       date: date,
       council: council,
-      ticket_price: ticket_price.toString(),
-      ticket_count: ticket_count.toString(),
+      ticket_price: ticket_price,
+      ticket_count: ticket_count,
       email: email,
       id: id
     };

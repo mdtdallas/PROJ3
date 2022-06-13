@@ -108,6 +108,11 @@ export default function UsersDataTable() {
         return (
           <div className="cellAction">
             <>
+              <Link to={`/users/edit/${params.row.id}`}>
+                <div className="newButton">Edit</div>
+              </Link>
+            </>
+            <>
               <Link to={`/users/${params.row.id}`} element={<UserSingle />}>
                 <div className="viewButton">View</div>
               </Link>
@@ -121,11 +126,6 @@ export default function UsersDataTable() {
               >
                 Delete
               </div>
-            </>
-            <>
-              <Link to={`/users/edit/${params.row.id}`}>
-                <div className="newButton">Edit</div>
-              </Link>
             </>
           </div>
         );

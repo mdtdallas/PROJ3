@@ -107,7 +107,12 @@ export default function ShowsDataTable() {
         return (
           <div className="cellAction">
             <>
-              <Link to={`/shows/${params.row.id}`} element={<ShowSingle />}>
+              <Link to={`/shows/edit/${params.row.id}`}>
+                <div className="newButton">Edit</div>
+              </Link>
+            </>
+            <>
+              <Link to={`/shows/${params.row.id}`}>
                 <div className="viewButton">View</div>
               </Link>
             </>

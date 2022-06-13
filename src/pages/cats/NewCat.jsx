@@ -83,7 +83,7 @@ export default function NewCat({ title }) {
           <div className="left">
             <img
               src={
-                file ? URL.createObjectURL(file) : "https://picsum.photos/200"
+                file ? URL.createObjectURL(file) : "https://placekitten.com/g/200/300"
               }
               alt=""
             />

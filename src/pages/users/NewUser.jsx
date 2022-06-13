@@ -89,7 +89,7 @@ export default function NewUser({ title }) {
           <div className="left">
             <img
               src={
-                file ? URL.createObjectURL(file) : image
+                file ? URL.createObjectURL(file) : 'https://api.lorem.space/image/movie?w=150&h=220'
               }
               alt=""
             />

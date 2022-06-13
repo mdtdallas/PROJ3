@@ -85,7 +85,7 @@ export default function NewShow({ title }) {
           <div className="left">
             <img
               src={
-                file ? URL.createObjectURL(file) : image
+                file ? URL.createObjectURL(file) : 'https://api.lorem.space/image/movie?w=150&h=220'
               }
               alt=""
             />
@@ -163,6 +163,7 @@ export default function NewShow({ title }) {
                   type="text"
                   name="ticket_price"
                   onChange={(e) => setTicket_price(e.target.value)}
+                  min='1'
                   required
                 />
               </div>
@@ -172,6 +173,7 @@ export default function NewShow({ title }) {
                   type="text"
                   name="ticket_count"
                   onChange={(e) => setTicket_count(e.target.value)}
+                  min='1'
                   required
                 />
               </div>
