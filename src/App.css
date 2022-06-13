@@ -202,12 +202,11 @@ a {
 
 .navbar .items {
   display: flex;
-  align-items: flex-end;
 }
 
 .navbar .item {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   margin-right: 20px;
   position: relative;
 }
@@ -253,6 +252,10 @@ a {
   position: absolute;
   top: -5px;
   right: -5px;
+}
+
+.navbar .navProfilePic {
+  margin-left: 80%;
 }
 /* --------------------------------------------------------------------- */
 
