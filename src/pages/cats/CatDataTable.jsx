@@ -34,12 +34,12 @@ const columns = [
     field: "image",
     headerName: "Image",
     width: 90,
-    renderCell: () => {
+    renderCell: (params) => {
       return (
         <div className="cellWithImg">
           <Avatar
             className="cellImg"
-            src="https://picsum.photos/50"
+            src={params.row.image}
             alt="avatar"
           />
         </div>
