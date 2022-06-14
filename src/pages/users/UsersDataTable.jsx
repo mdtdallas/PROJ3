@@ -99,6 +99,22 @@ export default function UsersDataTable() {
       });
   }, []);
 
+  const action = (
+    <React.Fragment>
+      <Button color="secondary" size="small" onClick={handleClose}>
+        UNDO
+      </Button>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
+
   const actionColumn = [
     {
       field: "action",
@@ -141,25 +157,12 @@ export default function UsersDataTable() {
     if (reason === "clickaway") {
       return;
     }
-    if (status) window.location.reload();
     setOpen(false);
+    action();
+    if (status) window.location.reload();
   };
 
-  const action = (
-    <React.Fragment>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        UNDO
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </React.Fragment>
-  );
+  
 
   return (
     <div style={{ height: 700, width: "100%" }} className="datatable">
@@ -188,7 +191,7 @@ export default function UsersDataTable() {
         rowsPerPageOptions={[10]}
         checkboxSelection
       />
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
         <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
           {[status, warning, error]}
         </Alert>
