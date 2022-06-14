@@ -30,7 +30,7 @@ const columns = [
   {
     field: "image",
     headerName: "Image",
-    width: 130,
+    width: 90,
     renderCell: (params) => {
       return (
         <div className="cellWithImg">
@@ -73,7 +73,6 @@ export default function UsersDataTable() {
     if (data.error) setError(data.error);
     if (data.error) setSeverity("error");
     handleClick();
-    if (data.status) window.location.reload();
   }
 
   useEffect(() => {
@@ -142,7 +141,7 @@ export default function UsersDataTable() {
     if (reason === "clickaway") {
       return;
     }
-
+    if (status) window.location.reload();
     setOpen(false);
   };
 
