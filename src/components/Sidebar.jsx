@@ -118,7 +118,7 @@ export default function Sidebar() {
             </a>
           </li>
           <li>
-            <div onClick={logout}>
+            <div onClick={logout} className='nav-link'>
               <LogoutIcon className="icon" />
               <span>Logout</span>
             </div>

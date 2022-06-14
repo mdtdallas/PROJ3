@@ -184,8 +184,8 @@ export default function ShowsDataTable() {
       <DataGrid
         rows={rows}
         columns={columns.concat(actionColumn)}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
+        pageSize={15}
+        rowsPerPageOptions={[15]}
         checkboxSelection
       />
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>

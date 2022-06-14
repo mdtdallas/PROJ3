@@ -254,6 +254,12 @@ a {
   right: -5px;
 }
 
+.navbar img {
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  border-radius: 10px;
+}
+
 /* --------------------------------------------------------------------- */
 
 .widget {
@@ -625,7 +631,6 @@ a {
 .new img {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
   object-fit: cover;
   text-align: center;
   margin: 20px 0 0 50px;
