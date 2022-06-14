@@ -52,7 +52,7 @@ export default function NewShow({ title }) {
   const submit = (e) => {
     e.preventDefault();
     const email = localStorage.getItem('email');
-    const data = { title: showTitle, location: location, photo: image, judges: judges, date: date, council: council, ticket_price: ticket_price, ticket_count: ticket_count, email: email  };
+    const data = { title: showTitle, location: location, photo: image, judges: judges, date: date.toLocaleDateString("en-AU"), council: council, ticket_price: ticket_price, ticket_count: ticket_count, email: email  };
     fetch("https://proj2-api.herokuapp.com/api/shows/create", {
       method: "POST",
       headers: {
