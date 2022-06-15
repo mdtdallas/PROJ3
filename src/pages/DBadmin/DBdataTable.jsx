@@ -24,9 +24,8 @@ const columns = [
   },
 ];
 
-export default function DBdataTable(params) {
+export default function DBdataTable() {
   const [rows, setRows] = useState([]);
-  const [data, setData] = useState(null);
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
@@ -80,7 +79,7 @@ export default function DBdataTable(params) {
       });
   };
 
-  const addBlock = (id, ip, email) => {
+  const addBlock = (id) => {
     const BlockIP = { id: id, access: "deny", email: "test@mail.com" };
     fetch("https://proj2-api.herokuapp.com/denyIP", {
       method: "POST",
@@ -111,6 +110,7 @@ export default function DBdataTable(params) {
     }
 
     setOpen(false);
+    action();
   };
 
   const action = (
@@ -140,7 +140,7 @@ export default function DBdataTable(params) {
             <Button
               variant="contained"
               className="sideButton"
-              onClick={() => addAllow(params.row.id, params.row.IP, params.row.email)}
+              onClick={() => addAllow(params.row.id)}
             >
               Allow
             </Button>

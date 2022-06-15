@@ -29,6 +29,7 @@ export default function NewUser({ title }) {
     }
     window.location.reload();
     setOpen(false);
+    action();
   };
 
   const action = (

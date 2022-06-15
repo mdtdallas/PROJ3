@@ -70,6 +70,7 @@ export default function Login3() {
     }
 
     setOpen(false);
+    action();
   };
 
   const action = (
@@ -126,7 +127,7 @@ export default function Login3() {
           {[status, warning, error]}
         </Alert>
       </Snackbar>
-      
+
     </div>
   );
 }

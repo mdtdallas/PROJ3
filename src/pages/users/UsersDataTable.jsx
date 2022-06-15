@@ -48,6 +48,8 @@ const columns = [
   { field: "userType", headerName: "User Type", width: 130 },
 ];
 
+
+
 export default function UsersDataTable() {
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -56,6 +58,31 @@ export default function UsersDataTable() {
   const [warning, setWarning] = useState();
   const [severity, setSeverity] = useState("success");
   const [open, setOpen] = useState(false);
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+    action();
+    if (status) window.location.reload();
+  };
+
+  const action = (
+    <React.Fragment>
+      <Button color="secondary" size="small" onClick={handleClose}>
+        UNDO
+      </Button>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
 
   async function handleDelete(id) {
     const res = await fetch(`https://proj2-api.herokuapp.com/api/userDelete/${id}`, {
@@ -100,21 +127,7 @@ export default function UsersDataTable() {
       });
   }, []);
 
-  const action = (
-    <React.Fragment>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        UNDO
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </React.Fragment>
-  );
+  
 
   const actionColumn = [
     {
@@ -154,14 +167,7 @@ export default function UsersDataTable() {
     setOpen(true);
   };
 
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setOpen(false);
-    action();
-    if (status) window.location.reload();
-  };
+  
 
   
 

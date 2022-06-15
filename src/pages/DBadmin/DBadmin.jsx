@@ -43,6 +43,7 @@ export default function DBadmin() {
     }
 
     setOpen(false);
+    action();
   };
 
   const action = (

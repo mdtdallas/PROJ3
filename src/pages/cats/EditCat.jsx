@@ -50,6 +50,7 @@ export default function EditCat({ title }) {
     }
 
     setOpen(false);
+    action();
   };
 
   const action = (

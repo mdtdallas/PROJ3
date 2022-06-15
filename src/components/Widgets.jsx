@@ -45,6 +45,8 @@ export default function Widgets({ type }) {
         link: "See balance",
         icon: <AccountBalanceWalletOutlinedIcon className="icon" />,
     };
+    break;
+    default: {}
   }
   return (
     <div className="widget">

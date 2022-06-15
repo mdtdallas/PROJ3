@@ -2,9 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Single from "./pages/Single";
-import New from "./pages/New";
-import { userInputs, showInputs, catInputs, photoInputs } from "./formInputs";
+import { userInputs, showInputs, catInputs } from "./formInputs";
 import "./themes.css";
 import React, { useContext } from "react";
 import { DarkModeContext } from "./components/darkModeContext";
@@ -72,11 +70,6 @@ function App() {
               <Route path="photos" exact element={<Photos />} />
               <Route path="dbadmin">
                 <Route index element={<DBadmin />} />
-                <Route path=":id" element={<Single />} />
-                <Route
-                  path="new"
-                  element={<New inputs={photoInputs} title="Add New Cat" />}
-                />
               </Route>
             </Route>
             <Route path="login" exact element={<Login />} />

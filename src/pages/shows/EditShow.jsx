@@ -55,6 +55,7 @@ export default function EditShow({ title }) {
     }
     if(success) window.location.href = '/shows';
     setOpen(false);
+    action();
   };
 
   const action = (

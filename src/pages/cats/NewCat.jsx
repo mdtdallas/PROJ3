@@ -28,6 +28,7 @@ export default function NewCat({ title }) {
     }
 
     setOpen(false);
+    action();
   };
 
   const action = (

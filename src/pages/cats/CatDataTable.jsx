@@ -121,14 +121,14 @@ export default function CatDataTable() {
             <Link to={`/cats/${params.row.id}`} element={<Cat />}>
               <div className="viewButton">View</div>
             </Link>
-            <a href="#">
+            <div className="link">
               <div
                 className="deleteButton"
                 onClick={() => handleDelete(params.row.id)}
               >
                 Delete
               </div>
-            </a>
+            </div>
           </div>
         );
       },

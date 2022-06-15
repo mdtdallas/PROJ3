@@ -31,6 +31,7 @@ export default function NewShow({ title }) {
     }
 
     setOpen(false);
+    action();
   };
 
   const action = (

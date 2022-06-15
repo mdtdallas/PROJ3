@@ -43,6 +43,7 @@ export default function Sidebar() {
     }
 
     setOpen(false);
+    action();
   };
 
   const action = (
