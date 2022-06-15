@@ -126,7 +126,7 @@ export default function EditShow({ title }) {
             />
           </div>
           <div className="right">
-            <form method="PATCH">
+            <form method="PATCH" autocomplete="off">
               <div className="formInput">
                 <label htmlFor="file">
                   Image: <AddPhotoAlternateIcon className="icon" />

@@ -109,7 +109,7 @@ export default function EditCat({ title }) {
             />
           </div>
           <div className="right">
-            <form onSubmit={submit}>
+            <form onSubmit={submit} autocomplete="off">
               <div className="formInput">
                 <label htmlFor="file">
                   Image: <AddPhotoAlternateIcon className="icon" />

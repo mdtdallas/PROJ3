@@ -141,8 +141,8 @@ export default function ShowsDataTable() {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
+    action();
   };
 
   const action = (

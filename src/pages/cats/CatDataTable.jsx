@@ -141,8 +141,8 @@ export default function CatDataTable() {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
+    action();
   };
 
   const action = (
