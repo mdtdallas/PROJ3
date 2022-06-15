@@ -1,5 +1,4 @@
-import { Button, CircularProgress, Alert, IconButton, Snackbar } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
+import { Button, CircularProgress, Alert, Snackbar } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import React, { useEffect, useState } from "react";
 import "../../App.css";
@@ -31,10 +30,6 @@ export default function DBdataTable() {
   const [loading, setLoading] = useState(true);
   const [severity, setSeverity] = useState("success");
   const [open, setOpen] = useState(false);
-
-  // const handleDelete = (id) => {
-  //   setData(data.filter((item) => item.id !== id));
-  // };
 
   useEffect(() => {
     setLoading(true);
@@ -110,24 +105,7 @@ export default function DBdataTable() {
     }
 
     setOpen(false);
-    action();
   };
-
-  const action = (
-    <React.Fragment>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        UNDO
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </React.Fragment>
-  );
 
   const actionColumn = [
     {

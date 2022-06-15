@@ -3,8 +3,7 @@ import "../../App.css";
 import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/Navbar";
 import DBdataTable from "./DBdataTable";
-import { Alert, Button, IconButton, Snackbar } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
+import { Alert, Button, Snackbar } from "@mui/material";
 
 export default function DBadmin() {
   const [status, setStatus] = useState('');
@@ -41,26 +40,8 @@ export default function DBadmin() {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
-    action();
   };
-
-  const action = (
-    <React.Fragment>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        UNDO
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </React.Fragment>
-  );
 
   const handleRefresh = () => {
     window.location.reload()

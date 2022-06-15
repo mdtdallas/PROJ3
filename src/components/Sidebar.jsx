@@ -8,8 +8,7 @@ import StorageIcon from "@mui/icons-material/Storage";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import { DarkModeContext } from "./darkModeContext";
-import { Alert, AlertTitle, IconButton, Button, Snackbar } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
+import { Alert, AlertTitle, Snackbar } from "@mui/material";
 
 export default function Sidebar() {
   const [status, setStatus] = useState("");
@@ -41,26 +40,8 @@ export default function Sidebar() {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
-    action();
   };
-
-  const action = (
-    <React.Fragment>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        UNDO
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </React.Fragment>
-  );
 
   return (
     <>
@@ -120,10 +101,10 @@ export default function Sidebar() {
             </a>
           </li>
           <li>
-            <div onClick={logout} className='nav-link'>
+            <button onClick={logout} className='nav-link'>
               <LogoutIcon className="icon" />
               <span>Logout</span>
-            </div>
+            </button>
           </li>
         </ul>
       </div>
@@ -141,7 +122,7 @@ export default function Sidebar() {
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert severity="success">
           <AlertTitle>Success</AlertTitle>
-          <strong>{status}</strong>
+          {status}
         </Alert>
       </Snackbar>
     </div>

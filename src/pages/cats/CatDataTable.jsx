@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { DataGrid, GridCloseIcon } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import Avatar from "@mui/material/Avatar";
 import { Link } from "react-router-dom";
 import Cat from "./Cat";
 import {
   Alert,
-  Button,
   CircularProgress,
-  IconButton,
   Snackbar,
 } from "@mui/material";
 
@@ -20,13 +18,8 @@ const columns = [
     width: 170,
   },
   {
-    field: "photo_path",
-    headerName: "Photo",
-    width: 90,
-  },
-  {
     field: "age",
-    headerName: "Judges",
+    headerName: "Age",
     type: "number",
     width: 110,
   },
@@ -144,24 +137,7 @@ export default function CatDataTable() {
       return;
     }
     setOpen(false);
-    action();
   };
-
-  const action = (
-    <React.Fragment>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        UNDO
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <GridCloseIcon fontSize="small" />
-      </IconButton>
-    </React.Fragment>
-  );
 
   return (
     <div style={{ height: "80%", width: "100%" }} className="datatable">

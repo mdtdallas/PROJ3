@@ -4,12 +4,9 @@ import Avatar from "@mui/material/Avatar";
 import { Link } from "react-router-dom";
 import {
   Alert,
-  Button,
   CircularProgress,
-  IconButton,
   Snackbar,
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
 
 const columns = [
   { field: "id", headerName: "ID", width: 50 },
@@ -144,24 +141,7 @@ export default function ShowsDataTable() {
       return;
     }
     setOpen(false);
-    action();
   };
-
-  const action = (
-    <React.Fragment>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        UNDO
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </React.Fragment>
-  );
 
   return (
     <div style={{ height: '80vh', width: "80vw" }} className="datatable">

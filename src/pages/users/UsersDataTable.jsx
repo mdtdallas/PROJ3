@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import Avatar from "@mui/material/Avatar";
-import { Alert, Button, CircularProgress, IconButton, Snackbar } from "@mui/material";
+import { Alert, CircularProgress, Snackbar } from "@mui/material";
 import { Link } from "react-router-dom";
 import UserSingle from "./UserSingle";
-import CloseIcon from "@mui/icons-material/Close";
+
 
 const columns = [
   { field: "id", headerName: "ID", width: 70 },
@@ -64,25 +64,8 @@ export default function UsersDataTable() {
       return;
     }
     setOpen(false);
-    action();
     if (status) window.location.reload();
   };
-
-  const action = (
-    <React.Fragment>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        UNDO
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </React.Fragment>
-  );
 
   async function handleDelete(id) {
     const res = await fetch(`https://proj2-api.herokuapp.com/api/userDelete/${id}`, {

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "../css/login.css";
 import { useNavigate } from "react-router-dom";
-import { Alert, Button, IconButton, Snackbar } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
+import { Alert,  Snackbar } from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -68,26 +67,9 @@ export default function Login3() {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
-    action();
   };
 
-  const action = (
-    <React.Fragment>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        UNDO
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </React.Fragment>
-  );
 
   return (
     <div className="login">

@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
 import AddPhotoAlternateIcon from "@mui/icons-material/DriveFolderUploadOutlined";
-import { Alert, IconButton, Snackbar, Button } from "@mui/material";
-import { GridCloseIcon } from "@mui/x-data-grid";
+import { Alert, Snackbar } from "@mui/material";
 import { useParams } from "react-router-dom";
 
 export default function EditUser({ title }) {
@@ -53,22 +52,6 @@ export default function EditUser({ title }) {
     setOpen(false);
   };
 
-  const action = (
-    <React.Fragment>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        UNDO
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <GridCloseIcon fontSize="small" />
-      </IconButton>
-    </React.Fragment>
-  );
-
   const submit = (e) => {
     e.preventDefault();
     const data = {
@@ -100,7 +83,6 @@ export default function EditUser({ title }) {
         handleClick();
         if (data.status) {
           window.location.href = '/users'
-          action();
         }
       });
   };
