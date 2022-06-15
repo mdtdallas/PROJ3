@@ -101,10 +101,10 @@ export default function Sidebar() {
             </a>
           </li>
           <li>
-            <button onClick={logout} className='nav-link'>
+            <div onClick={logout} className='nav-link'>
               <LogoutIcon className="icon" />
               <span>Logout</span>
-            </button>
+            </div>
           </li>
         </ul>
       </div>

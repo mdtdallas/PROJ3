@@ -43,9 +43,9 @@ export default function DBadmin() {
     setOpen(false);
   };
 
-  const handleRefresh = () => {
-    window.location.reload()
-  }
+  // const handleRefresh = () => {
+  //   window.location.reload()
+  // }
 
   return (
     <div className="dbadmin">
@@ -57,7 +57,7 @@ export default function DBadmin() {
           <h1>Table Management</h1>
             <div className="buttonStack">
             <Button variant="contained" color="success" onClick={clearLog}>Clear Log Files</Button>
-            <Button variant="contained" onClick={handleRefresh()}>Refresh Page</Button>
+            <Button variant="contained" >Refresh Page</Button>
             <Button type="submit" variant="contained" color="error">
               Clear Cats Table
             </Button>
