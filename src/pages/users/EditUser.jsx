@@ -147,8 +147,9 @@ export default function EditUser({ title }) {
                 <label htmlFor="password">Password</label>
                 <input
                   defaultValue={password}
+                  autocomplete="new-password"
                   type="text"
-                  name="password"
+                  
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
