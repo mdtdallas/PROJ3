@@ -58,6 +58,7 @@ export default function NewCat({ title }) {
         accessToken: localStorage.getItem("accessToken"),
       },
       body: JSON.stringify(data),
+      credentials: 'include'
     })
     .then(response => response.json())
       .then((data) => {
@@ -104,6 +105,7 @@ export default function NewCat({ title }) {
                 <label htmlFor="name">Name</label>
                 <input
                   type="text"
+                  pattern='[A-Za-z]{3}'
                   name="name"
                   onChange={(e) => setName(e.target.value)}
                   required
@@ -112,7 +114,7 @@ export default function NewCat({ title }) {
               <div className="formInputs">
                 <label htmlFor="image">Image Link</label>
                 <input
-                  type="text"
+                  type="url"
                   name="image"
                   onChange={(e) => setImage(e.target.value)}
                   required
@@ -122,6 +124,7 @@ export default function NewCat({ title }) {
                 <label htmlFor="breed">Breed</label>
                 <input
                   type="text"
+                  pattern='[A-Za-z]{3}'
                   name="breed"
                   onChange={(e) => setBreed(e.target.value)}
                   required
@@ -131,6 +134,7 @@ export default function NewCat({ title }) {
                 <label htmlFor="age">Age</label>
                 <input
                   type="text"
+                  pattern='[0-9]{1,2}'
                   name="age"
                   onChange={(e) => setAge(e.target.value)}
                   required
@@ -140,6 +144,7 @@ export default function NewCat({ title }) {
                 <label htmlFor="breeder">Breeder</label>
                 <input
                   type="text"
+                  pattern='[A-Za-z]{3}'
                   name="breeder"
                   onChange={(e) => setBreeder(e.target.value)}
                   required

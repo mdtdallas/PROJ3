@@ -45,6 +45,7 @@ export default function DBdataTable(params) {
         Accept: "application/json",
         accessToken: localStorage.getItem("accessToken"),
       },
+      credentials: 'include'
     })
       .then((res) => res.json())
       .then((data) => {
@@ -68,6 +69,7 @@ export default function DBdataTable(params) {
         accessToken: localStorage.getItem("accessToken"),
       },
       body: JSON.stringify(AllowIP),
+      credentials: 'include'
     })
       .then((res) => res.json())
       .then((data) => {
@@ -88,6 +90,7 @@ export default function DBdataTable(params) {
         accessToken: localStorage.getItem("accessToken"),
       },
       body: JSON.stringify(BlockIP),
+      credentials: 'include'
     })
       .then((res) => res.json())
       .then((data) => {

@@ -65,6 +65,7 @@ export default function NewUser({ title }) {
         accessToken: localStorage.getItem("accessToken"),
       },
       body: JSON.stringify(data),
+      credentials: 'include'
     })
       .then((response) => response.json())
       .then((data) => {
@@ -94,7 +95,7 @@ export default function NewUser({ title }) {
             />
           </div>
           <div className="right">
-            <form onSubmit={submit}>
+            <form onSubmit={submit} autoComplete='off'>
               <div className="formInput">
                 <label htmlFor="file">
                   Image: <AddPhotoAlternateIcon className="icon" />
@@ -120,6 +121,8 @@ export default function NewUser({ title }) {
                 <input
                   type="text"
                   name="password"
+                  minLength={5}
+                  maxLength={20}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
@@ -128,6 +131,7 @@ export default function NewUser({ title }) {
                 <label htmlFor="name">Name</label>
                 <input
                   type="text"
+                  pattern='[A-Za-z]{3}'
                   name="name"
                   onChange={(e) => setName(e.target.value)}
                   required
@@ -139,15 +143,14 @@ export default function NewUser({ title }) {
                   type="text"
                   name="phone"
                   onChange={(e) => setPhone(e.target.value)}
-                  minLength='10'
-                  maxLength='10'
+                  pattern='[0-9]{10,10}'
                   required
                 />
               </div>
               <div className="formInputs">
                 <label htmlFor="image">Image Link</label>
                 <input
-                  type="text"
+                  type="url"
                   name="image"
                   onChange={(e) => setImage(e.target.value)}
                   required

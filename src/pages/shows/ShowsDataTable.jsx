@@ -64,6 +64,7 @@ export default function ShowsDataTable() {
         Accept: "application/json",
         accessToken: localStorage.getItem("accessToken"),
       },
+      credentials: 'include'
     });
     const data = await res.json();
     if (data.status) setStatus(data.status);
@@ -83,6 +84,7 @@ export default function ShowsDataTable() {
         Accept: "application/json",
         accessToken: localStorage.getItem("accessToken"),
       },
+      credentials: 'include'
     })
       .then((res) => res.json())
       .then((data) => {

@@ -28,6 +28,7 @@ export default function EditUser({ title }) {
         Accept: "application/json",
         accessToken: localStorage.getItem("accessToken"),
       },
+      credentials: 'include'
     })
       .then((res) => res.json())
       .then((data) => {
@@ -87,6 +88,7 @@ export default function EditUser({ title }) {
         accessToken: localStorage.getItem("accessToken"),
       },
       body: JSON.stringify(data),
+      credentials: 'include'
     })
       .then((response) => response.json())
       .then((data) => {
@@ -149,7 +151,7 @@ export default function EditUser({ title }) {
                   defaultValue={password}
                   autocomplete="new-password"
                   type="text"
-                  
+                  minLength='4'
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
@@ -158,6 +160,7 @@ export default function EditUser({ title }) {
                 <label htmlFor="name">Name</label>
                 <input
                   defaultValue={name}
+                  pattern='[A-Za-z]{3}'
                   type="text"
                   name="name"
                   onChange={(e) => setName(e.target.value)}
@@ -171,8 +174,7 @@ export default function EditUser({ title }) {
                   type="text"
                   name="phone"
                   onChange={(e) => setPhone(e.target.value)}
-                  minLength='10'
-                  maxLength='10'
+                  pattern='[0-9]{10,10}'
                   required
                 />
               </div>
@@ -180,7 +182,7 @@ export default function EditUser({ title }) {
                 <label htmlFor="image">Image Link</label>
                 <input
                   defaultValue={image}
-                  type="text"
+                  type="url"
                   name="phone"
                   onChange={(e) => setImage(e.target.value)}
                   required

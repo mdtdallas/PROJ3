@@ -61,6 +61,7 @@ export default function NewShow({ title }) {
         accessToken: localStorage.getItem("accessToken"),
       },
       body: JSON.stringify(data),
+      credentials: 'include'
     })
     .then(response => response.json())
       .then((data) => {
@@ -109,13 +110,14 @@ export default function NewShow({ title }) {
                   type="text"
                   name="title"
                   onChange={(e) => setShowTitle(e.target.value)}
+                  pattern='[A-Za-z]{3}'
                   required
                 />
               </div>
               <div className="formInputs">
                 <label htmlFor="image">Image Link</label>
                 <input
-                  type="text"
+                  type="url"
                   name="image"
                   onChange={(e) => setImage(e.target.value)}
                   required
@@ -124,6 +126,7 @@ export default function NewShow({ title }) {
               <div className="formInputs">
                 <label htmlFor="location">Location</label>
                 <input
+                pattern='[A-Za-z0-9]{3}'
                   type="text"
                   name="location"
                   onChange={(e) => setLocation(e.target.value)}
@@ -135,6 +138,7 @@ export default function NewShow({ title }) {
                 <input
                   type="text"
                   name="judges"
+                  pattern='[A-Za-z]{3}'
                   onChange={(e) => setJudges(e.target.value)}
                   required
                 />
@@ -144,6 +148,8 @@ export default function NewShow({ title }) {
                 <input
                   type="date"
                   name="date"
+                  minLength='8'
+                  maxLength='8'
                   onChange={(e) => setDate(e.target.value)}
                   required
                 />
@@ -153,6 +159,7 @@ export default function NewShow({ title }) {
                 <input
                   type="text"
                   name="council"
+                  pattern='[A-Za-z]{3}'
                   onChange={(e) => setCouncil(e.target.value)}
                   required
                 />
@@ -162,6 +169,7 @@ export default function NewShow({ title }) {
                 <input
                   type="text"
                   name="ticket_price"
+                  pattern='[0-9]{2}'
                   onChange={(e) => setTicket_price(e.target.value)}
                   min='1'
                   required
@@ -174,6 +182,7 @@ export default function NewShow({ title }) {
                   name="ticket_count"
                   onChange={(e) => setTicket_count(e.target.value)}
                   min='1'
+                  pattern='[0-9]{2}'
                   required
                 />
               </div>

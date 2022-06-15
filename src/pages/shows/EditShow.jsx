@@ -30,6 +30,7 @@ export default function EditShow({ title }) {
         Accept: "application/json",
         accessToken: localStorage.getItem("accessToken"),
       },
+      credentials: 'include'
     })
       .then((res) => res.json())
       .then((data) => {
@@ -94,6 +95,7 @@ export default function EditShow({ title }) {
         Accept: "application/json",
         accessToken: localStorage.getItem("accessToken"),
       },
+      credentials: 'include',
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
@@ -120,7 +122,7 @@ export default function EditShow({ title }) {
           <div className="left">
             <img
               src={
-                file ? URL.createObjectURL(file) : "https://picsum.photos/200"
+                file ? URL.createObjectURL(file) : image
               }
               alt=""
             />
@@ -144,6 +146,7 @@ export default function EditShow({ title }) {
                 defaultValue={showTitle}
                   type="text"
                   name="title"
+                  pattern='[A-Za-z]{3,}'
                   onChange={(e) => setShowTitle(e.target.value)}
                   required
                 />
@@ -152,7 +155,8 @@ export default function EditShow({ title }) {
                 <label htmlFor="image">Image Link</label>
                 <input
                 defaultValue={image}
-                  type="text"
+                pattern="https?://.+"
+                  type="url"
                   name="image"
                   onChange={(e) => setImage(e.target.value)}
                   required
@@ -162,6 +166,7 @@ export default function EditShow({ title }) {
                 <label htmlFor="location">Location</label>
                 <input
                 defaultValue={location}
+                pattern='[A-Za-z0-9]{3,}'
                   type="text"
                   name="location"
                   onChange={(e) => setLocation(e.target.value)}
@@ -173,6 +178,7 @@ export default function EditShow({ title }) {
                 <input
                 defaultValue={judges}
                   type="text"
+                  pattern='[A-Za-z]{3,}'
                   name="judges"
                   onChange={(e) => setJudges(e.target.value)}
                   required
@@ -193,6 +199,7 @@ export default function EditShow({ title }) {
                 <input
                 defaultValue={council}
                   type="text"
+                  pattern='[A-Za-z]{3}'
                   name="council"
                   onChange={(e) => setCouncil(e.target.value)}
                   required
@@ -204,6 +211,7 @@ export default function EditShow({ title }) {
                 defaultValue={ticket_price}
                   type="text"
                   name="ticket_price"
+                  pattern='[0-9]{1,4}'
                   onChange={(e) => setTicket_price(e.target.value)}
                   required
                 />
@@ -214,6 +222,7 @@ export default function EditShow({ title }) {
                 defaultValue={ticket_count}
                   type="text"
                   name="ticket_count"
+                  pattern='[0-9]{1,5}'
                   onChange={(e) => setTicket_count(e.target.value)}
                   required
                 />

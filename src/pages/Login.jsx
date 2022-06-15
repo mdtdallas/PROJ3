@@ -31,6 +31,7 @@ export default function Login3() {
     fetch("https://proj2-api.herokuapp.com/api/users/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      credentials: 'include',
       body: JSON.stringify(values),
     })
       .then((response) => response.json())
@@ -95,9 +96,6 @@ export default function Login3() {
           name="email"
           type="email"
           placeholder="Email"
-          // onChange={(e) => {
-          //   setEmail(e.target.value);
-          // }}
           onChange={formik.handleChange}
           value={formik.values.email}
           onBlur={formik.handleBlur}
@@ -110,9 +108,6 @@ export default function Login3() {
           name="password"
           type="password"
           placeholder="Password"
-          // onChange={(e) => {
-          //   setPassword(e.target.value);
-          // }}
           onChange={formik.handleChange}
           value={formik.values.password}
           onBlur={formik.handleBlur}
@@ -125,11 +120,13 @@ export default function Login3() {
           Submit
         </button>
       </div>
+
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>
           {[status, warning, error]}
         </Alert>
       </Snackbar>
+      
     </div>
   );
 }

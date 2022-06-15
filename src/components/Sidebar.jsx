@@ -19,6 +19,7 @@ export default function Sidebar() {
     fetch("https://proj2-api.herokuapp.com/api/users/logout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      credentials: 'include'
     })
       .then((res) => res.json())
       .then((data) => {

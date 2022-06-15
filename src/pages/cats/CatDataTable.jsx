@@ -67,6 +67,7 @@ export default function CatDataTable() {
         Accept: "application/json",
         accessToken: localStorage.getItem("accessToken"),
       },
+      credentials: 'include'
     })
       .then((res) => res.json())
       .then((info) => {
@@ -91,6 +92,7 @@ export default function CatDataTable() {
           Accept: "application/json",
           accessToken: localStorage.getItem("accessToken"),
         },
+        credentials: 'include'
       }
     );
     const data = await res.json();

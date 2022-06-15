@@ -15,6 +15,7 @@ export default function ShowSingle() {
         Accept: "application/json",
         accessToken: localStorage.getItem("accessToken"),
       },
+      credentials: 'include'
     })
       .then((res) => res.json())
       .then((show) => setShow(show));

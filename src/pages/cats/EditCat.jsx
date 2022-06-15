@@ -28,6 +28,7 @@ export default function EditCat({ title }) {
         Accept: "application/json",
         accessToken: localStorage.getItem("accessToken"),
       },
+      credentials: 'include'
     })
     .then(res => res.json())
     .then((data) => {
@@ -79,6 +80,7 @@ export default function EditCat({ title }) {
         accessToken: localStorage.getItem("accessToken"),
       },
       body: JSON.stringify(data),
+      credentials: 'include'
     })
     .then(response => response.json())
       .then((data) => {
@@ -125,6 +127,7 @@ export default function EditCat({ title }) {
                 <label htmlFor="name">Name</label>
                 <input
                 defaultValue={name}
+                pattern='[A-Za-z]{3}'
                   type="text"
                   name="name"
                   onChange={(e) => setName(e.target.value)}
@@ -135,7 +138,7 @@ export default function EditCat({ title }) {
                 <label htmlFor="image">Image Link</label>
                 <input
                 defaultValue={image}
-                  type="text"
+                  type="url"
                   name="image"
                   onChange={(e) => setImage(e.target.value)}
                   required
@@ -145,6 +148,7 @@ export default function EditCat({ title }) {
                 <label htmlFor="breed">Breed</label>
                 <input
                 defaultValue={breed}
+                pattern='[A-Za-z]{3}'
                   type="text"
                   name="breed"
                   onChange={(e) => setBreed(e.target.value)}
@@ -155,6 +159,7 @@ export default function EditCat({ title }) {
                 <label htmlFor="age">Age</label>
                 <input
                 defaultValue={age}
+                pattern='[0-9]{2}'
                   type="text"
                   name="age"
                   onChange={(e) => setAge(e.target.value)}
@@ -165,6 +170,7 @@ export default function EditCat({ title }) {
                 <label htmlFor="breeder">Breeder</label>
                 <input
                 defaultValue={breeder}
+                pattern='[A-Za-z]{3}'
                   type="text"
                   name="breeder"
                   onChange={(e) => setBreeder(e.target.value)}

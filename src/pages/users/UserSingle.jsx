@@ -18,6 +18,7 @@ export default function UserSingle() {
             Accept: "application/json",
             accessToken: localStorage.getItem("accessToken"),
           },
+          credentials: 'include'
         })
         .then(res => res.json())
         .then((user) => {

@@ -20,6 +20,7 @@ export default function DBadmin() {
         Accept: "application/json",
         accessToken: localStorage.getItem("accessToken"),
       },
+      credentials: 'include'
     })
     .then(res => res.json())
     .then((data) => {
