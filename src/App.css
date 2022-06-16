@@ -260,6 +260,10 @@ a {
   border-radius: 10px;
 }
 
+.navbar .navProfilePic {
+  margin: 0!important;
+}
+
 /* --------------------------------------------------------------------- */
 
 .widget {
