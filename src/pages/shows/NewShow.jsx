@@ -148,7 +148,7 @@ export default function NewShow({ title }) {
               </div>
               <div className="formInputs">
                 <label htmlFor="ticket_price">Ticket Price</label>
-                $<input
+                <input
                   type="text"
                   name="ticket_price"
                   pattern='[0-9]{2,}'

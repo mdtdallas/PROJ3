@@ -190,7 +190,7 @@ export default function EditShow({ title }) {
               </div>
               <div className="formInputs">
                 <label htmlFor="ticket_price">Ticket Price</label>
-                $<input
+                <input
                 defaultValue={ticket_price}
                   type="text"
                   name="ticket_price"
