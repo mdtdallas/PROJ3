@@ -125,9 +125,9 @@ export default function NewUser({ title }) {
                 <input
                   type="text"
                   name="phone"
-                  maxLength={10}
+                  
                   onChange={(e) => setPhone(e.target.value)}
-                  pattern='[0-9]'
+                  
                   required
                 />
               </div>
