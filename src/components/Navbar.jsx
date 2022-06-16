@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-import Avatar from '@mui/material/Avatar';
 import { DarkModeContext } from './darkModeContext';
 
 export default function Navbar() {
