@@ -156,8 +156,6 @@ export default function EditUser({ title }) {
                   type="text"
                   name="phone"
                   onChange={(e) => setPhone(e.target.value)}
-                  pattern='[0-9]'
-                  maxLength={10}
                   required
                 />
               </div>
