@@ -37,7 +37,7 @@ export default function Navbar() {
                    <h2> {username}</h2>
                 </div>
                 <div className='item'>
-                    <Avatar src="https://api.lorem.space/image/face?w=100" alt="" className='navProfilePic' sx={{ width: 56, height: 56 }} />
+                    <Avatar src="https://api.lorem.space/image/face?w=100" alt="" className='navProfilePic' sx={{ width: 56, height: 56, margin: 0 }} />
                 </div>
             </div>
         </div>

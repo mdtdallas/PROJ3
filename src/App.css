@@ -630,9 +630,7 @@ a {
 
 .new img {
   width: 200px;
-  height: 200px;
   object-fit: cover;
-  text-align: center;
   margin: 20px 0 0 50px;
 }
 
