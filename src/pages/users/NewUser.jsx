@@ -125,9 +125,7 @@ export default function NewUser({ title }) {
                 <input
                   type="text"
                   name="phone"
-                  
                   onChange={(e) => setPhone(e.target.value)}
-                  
                   required
                 />
               </div>
