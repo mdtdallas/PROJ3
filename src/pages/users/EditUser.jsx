@@ -155,7 +155,6 @@ export default function EditUser({ title }) {
                   defaultValue={phone}
                   type="text"
                   name="phone"
-                  pattern="[0-9]"
                   onChange={(e) => setPhone(e.target.value)}
                   required
                 />
