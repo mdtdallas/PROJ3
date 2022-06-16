@@ -70,7 +70,7 @@ export default function NewShow({ title }) {
               src={
                 file ? URL.createObjectURL(file) : 'https://api.lorem.space/image/movie?w=150&h=220'
               }
-              alt=""
+              alt="Show Title"
             />
           </div>
           <div className="right">
@@ -92,7 +92,7 @@ export default function NewShow({ title }) {
                   type="text"
                   name="title"
                   onChange={(e) => setShowTitle(e.target.value)}
-                  pattern='[A-Za-z]{3}'
+                  pattern='[A-Za-z0-9\s]+{3,}'
                   required
                 />
               </div>
@@ -108,7 +108,7 @@ export default function NewShow({ title }) {
               <div className="formInputs">
                 <label htmlFor="location">Location</label>
                 <input
-                pattern='[A-Za-z0-9]{3}'
+                pattern='[A-Za-z0-9\s]+{3}'
                   type="text"
                   name="location"
                   onChange={(e) => setLocation(e.target.value)}
@@ -120,7 +120,7 @@ export default function NewShow({ title }) {
                 <input
                   type="text"
                   name="judges"
-                  pattern='[A-Za-z]{3}'
+                  pattern='[A-Za-z\s]+{3}'
                   onChange={(e) => setJudges(e.target.value)}
                   required
                 />
@@ -131,7 +131,7 @@ export default function NewShow({ title }) {
                   type="date"
                   name="date"
                   minLength='8'
-                  maxLength='8'
+                  maxLength='10'
                   onChange={(e) => setDate(e.target.value)}
                   required
                 />
@@ -141,17 +141,17 @@ export default function NewShow({ title }) {
                 <input
                   type="text"
                   name="council"
-                  pattern='[A-Za-z]{3}'
+                  pattern='[A-Za-z\s]+{3}'
                   onChange={(e) => setCouncil(e.target.value)}
                   required
                 />
               </div>
               <div className="formInputs">
                 <label htmlFor="ticket_price">Ticket Price</label>
-                <input
+                $<input
                   type="text"
                   name="ticket_price"
-                  pattern='[0-9]{2}'
+                  pattern='[0-9]{2,}'
                   onChange={(e) => setTicket_price(e.target.value)}
                   min='1'
                   required
@@ -164,7 +164,7 @@ export default function NewShow({ title }) {
                   name="ticket_count"
                   onChange={(e) => setTicket_count(e.target.value)}
                   min='1'
-                  pattern='[0-9]{2}'
+                  pattern='[0-9]{2,}'
                   required
                 />
               </div>

@@ -89,7 +89,7 @@ export default function EditCat({ title }) {
               src={
                 file ? URL.createObjectURL(file) : image
               }
-              alt=""
+              alt="User Cat Title"
             />
           </div>
           <div className="right">
@@ -109,7 +109,7 @@ export default function EditCat({ title }) {
                 <label htmlFor="name">Name</label>
                 <input
                 defaultValue={name}
-                pattern='[A-Za-z]{3}'
+                pattern='[A-Za-z0-9\s]+{3}'
                   type="text"
                   name="name"
                   onChange={(e) => setName(e.target.value)}
@@ -130,7 +130,7 @@ export default function EditCat({ title }) {
                 <label htmlFor="breed">Breed</label>
                 <input
                 defaultValue={breed}
-                pattern='[A-Za-z]{3}'
+                pattern='[A-Za-z\s]+{3,}'
                   type="text"
                   name="breed"
                   onChange={(e) => setBreed(e.target.value)}
@@ -144,6 +144,7 @@ export default function EditCat({ title }) {
                 pattern='[0-9]{2}'
                   type="text"
                   name="age"
+                  min={2000}
                   onChange={(e) => setAge(e.target.value)}
                   required
                 />
@@ -152,7 +153,7 @@ export default function EditCat({ title }) {
                 <label htmlFor="breeder">Breeder</label>
                 <input
                 defaultValue={breeder}
-                pattern='[A-Za-z]{3}'
+                pattern='[A-Za-z\s]+{3}'
                   type="text"
                   name="breeder"
                   onChange={(e) => setBreeder(e.target.value)}

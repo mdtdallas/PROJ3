@@ -129,7 +129,7 @@ export default function EditShow({ title }) {
                 defaultValue={showTitle}
                   type="text"
                   name="title"
-                  pattern='[A-Za-z]{3,}'
+                  pattern='[A-Za-z0-9\s]+{3,}'
                   onChange={(e) => setShowTitle(e.target.value)}
                   required
                 />
@@ -149,7 +149,7 @@ export default function EditShow({ title }) {
                 <label htmlFor="location">Location</label>
                 <input
                 defaultValue={location}
-                pattern='[A-Za-z0-9]{3,}'
+                pattern='[A-Za-z0-9\s]{3,}'
                   type="text"
                   name="location"
                   onChange={(e) => setLocation(e.target.value)}
@@ -161,7 +161,7 @@ export default function EditShow({ title }) {
                 <input
                 defaultValue={judges}
                   type="text"
-                  pattern='[A-Za-z]{3,}'
+                  pattern='[A-Za-z\s]+{3,}'
                   name="judges"
                   onChange={(e) => setJudges(e.target.value)}
                   required
@@ -182,7 +182,7 @@ export default function EditShow({ title }) {
                 <input
                 defaultValue={council}
                   type="text"
-                  pattern='[A-Za-z]{3}'
+                  pattern='[A-Za-z\s]+{3,}'
                   name="council"
                   onChange={(e) => setCouncil(e.target.value)}
                   required
@@ -190,7 +190,7 @@ export default function EditShow({ title }) {
               </div>
               <div className="formInputs">
                 <label htmlFor="ticket_price">Ticket Price</label>
-                <input
+                $<input
                 defaultValue={ticket_price}
                   type="text"
                   name="ticket_price"

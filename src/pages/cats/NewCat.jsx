@@ -87,7 +87,7 @@ export default function NewCat({ title }) {
                 <label htmlFor="name">Name</label>
                 <input
                   type="text"
-                  pattern='[A-Za-z]{3}'
+                  pattern='[A-Za-z\s]+{3,}'
                   name="name"
                   onChange={(e) => setName(e.target.value)}
                   required
@@ -106,7 +106,7 @@ export default function NewCat({ title }) {
                 <label htmlFor="breed">Breed</label>
                 <input
                   type="text"
-                  pattern='[A-Za-z]{3}'
+                  pattern='[A-Za-z\s]+{3,}'
                   name="breed"
                   onChange={(e) => setBreed(e.target.value)}
                   required
@@ -126,7 +126,7 @@ export default function NewCat({ title }) {
                 <label htmlFor="breeder">Breeder</label>
                 <input
                   type="text"
-                  pattern='[A-Za-z]{3}'
+                  pattern='[A-Za-z\s]+{3,}'
                   name="breeder"
                   onChange={(e) => setBreeder(e.target.value)}
                   required

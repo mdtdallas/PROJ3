@@ -64,7 +64,6 @@ export default function UsersDataTable() {
       return;
     }
     setOpen(false);
-    if (status) window.location.reload();
   };
 
   async function handleDelete(id) {
@@ -83,6 +82,7 @@ export default function UsersDataTable() {
     if (data.error) setError(data.error);
     if (data.error) setSeverity("error");
     handleClick();
+    if(data.status) window.location.href = '/users'
   }
 
   useEffect(() => {

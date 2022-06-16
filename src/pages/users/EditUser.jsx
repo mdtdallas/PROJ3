@@ -142,7 +142,7 @@ export default function EditUser({ title }) {
                 <label htmlFor="name">Name</label>
                 <input
                   defaultValue={name}
-                  pattern='[A-Za-z]{3}'
+                  pattern='[A-Za-z/s]+{3,}'
                   type="text"
                   name="name"
                   onChange={(e) => setName(e.target.value)}
@@ -156,7 +156,8 @@ export default function EditUser({ title }) {
                   type="text"
                   name="phone"
                   onChange={(e) => setPhone(e.target.value)}
-                  pattern='[0-9]{10,10}'
+                  pattern='[0-9]'
+                  maxLength={10}
                   required
                 />
               </div>
@@ -165,7 +166,7 @@ export default function EditUser({ title }) {
                 <input
                   defaultValue={image}
                   type="url"
-                  name="phone"
+                  name="image"
                   onChange={(e) => setImage(e.target.value)}
                   required
                 />

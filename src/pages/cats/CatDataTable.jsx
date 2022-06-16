@@ -21,7 +21,7 @@ const columns = [
     field: "age",
     headerName: "Age",
     type: "number",
-    width: 110,
+    width: 70,
   },
   {
     field: "image",
